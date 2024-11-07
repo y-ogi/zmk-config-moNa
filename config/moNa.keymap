@@ -72,9 +72,7 @@
 &kp LCTRL                         &lt 1 SPACE  &lt_to_layer_0 3 ESCAPE    &kp BACKSPACE    &lt 2 ENTER  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp GLOBE   &kp RIGHT_CONTROL
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp LC(K_SCROLL_UP) LC(K_SCROLL_DOWN)>,
-                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         layer_1 {

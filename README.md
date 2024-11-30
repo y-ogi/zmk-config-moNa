@@ -35,7 +35,7 @@ kumakeyさんから販売許可は戴いております。
 
 ### 1-1. 性能紹介
 
-* ロープロファイル
+* ロープロファイル(v1/v2両対応)
 * 完全ワイヤレス
 * 17mmキーピッチ
 * ZMKfirmware採用
@@ -75,7 +75,7 @@ kumakeyさんから販売許可は戴いております。
 
 ### 2-2.別途購入必要部品
 
-1. キースイッチ(choc v2)
+1. キースイッチ(choc v1/v2)
 > おすすめ : lofree ghoast
 2. キーキャップ(キーピッチ17mm要対応)  
 17mm用キーキャップの3Dデータは [こちら](model/keycap/17mm_keycap.3mf) に公開しています。
@@ -96,8 +96,10 @@ kumakeyさんから販売許可は戴いております。
 shakupanさん作のキーキャップの3Dデータを公開しています。
 3Dプリンタをお持ちの方は[こちら](model/keycap/17mm_keycap.3mf)からダウンロードして印刷してみてください。
 印刷の際は側面を下にして印刷することで積層が縦になり手触りがとてもよくなります。
-![スライス写真](img/keycap_setting_3.png)
-<img src="img/keycap_setting_1.png" width="300"> <img src="img/keycap_setting_2.png" width="300">
+<!-- プリント写真 -->
+<img src="img/keycap_setting_3.png" width="400">
+<img src="img/keycap_setting_1.png" width="300"> 
+<img src="img/keycap_setting_2.png" width="300">
 
 3Dプリンタを持っていない方でもmoNaの購入時にオプションで付けることが可能となる予定です。  
 あくまで3Dプリンタ製であるということをご理解いただいたうえでご購入してください。

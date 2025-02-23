@@ -12,7 +12,7 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-pmw3610-driver  # <-- トラボドライバ
-      remote: sayu-hub
+      remote: kloir-z
       revision: main
     - name: zmk-rgbled-widget  # <-- led
       remote: caksoylar

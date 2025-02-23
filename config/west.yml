@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sayu-hub
       url-base: https://github.com/sayu-hub
+    - name: kloir-z
+      url-base: https://github.com/kloir-z
     - name: caksoylar  # <-- led
       url-base: https://github.com/caksoylar  
   projects:

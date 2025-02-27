@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/rgbled_widget.dtsi>  // led制御
 
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100   //スクロール量
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100   //スクロール量
 
 #define MOUSE 6
 
@@ -65,10 +65,10 @@
             tapping-term-ms = <200>;
         };
 
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        mouse_scroll: mouse_wheel_scrl{
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
             // 追加: スクロールのタップ時間を設定 (20ms)
             tap-ms = <20>;
         };
@@ -88,7 +88,9 @@
             &kp LCTRL                                         &lt 2 SPACE  &lt_to_layer_0 4 INT_MUHENKAN     &lt_to_layer_0 3 INT_HENKAN    &lt 1 SPACE  &kp BACKSPACE    &kp DEL       &kp LEFT_WIN  &kp LEFT_ALT
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = 
+                <&mouse_scroll SCRL_UP SCRL_DOWN>,
+                <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         layer_1 {   //レイヤー1の時の設定
@@ -99,7 +101,9 @@
             &trans                                                                 &trans                 &trans    &trans  &trans  &trans       &trans       &trans        &kp PIPE
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = 
+                <&mouse_scroll SCRL_LEFT SCRL_RIGHT>,
+                <&mouse_scroll SCRL_LEFT SCRL_RIGHT>;
         };
 
         layer_2 {   //レイヤー2の時の設定
@@ -109,6 +113,10 @@
             &kp F1           &kp F2       &kp F3    &kp F4      &kp F5       &kp F11             &kp F12  &kp F6     &kp F7         &kp F8        &kp F9       &kp F10
             &trans                                              &trans       &trans              &trans   &trans     &trans         &trans        &trans       &trans
             >;
+
+            sensor-bindings = 
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         layer_3 {    //レイヤー3の時の設定

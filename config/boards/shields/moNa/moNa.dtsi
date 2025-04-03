@@ -17,7 +17,7 @@
             RC(3,0)                         RC(3,2) RC(3,1)     RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9) RC(3,10)
         >;
     };
-    
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
@@ -31,10 +31,6 @@
     };
 
     left_encoder: encoder_left {
-       compatible = "alps,ec11";
-        a-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-        b-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-        steps = <24>;
         status = "disabled";
     };
 
@@ -48,7 +44,7 @@
 
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
-        sensors = <&right_encoder>;
+        sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <10>;
     };
 };

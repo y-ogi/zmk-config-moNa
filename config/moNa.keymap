@@ -42,6 +42,16 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        lang2 {
+            bindings = <&kp LANG2>;
+            key-positions = <5 6>;
+        };
+
+        lang1 {
+            bindings = <&kp LANG1>;
+            key-positions = <6 7>;
+        };
     };
 
     //マクロ(既存のキーの組み合わせ)
@@ -76,6 +86,13 @@
 
             tap-ms = <20>;
         };
+
+        td0: td0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD0";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT>, <&tog 4>, <&tog 0>;
+        };
     };
 
     //キーマップ設定
@@ -88,7 +105,7 @@
 &kp Q      &kp W  &lt 1 E  &kp R  &kp T                                             &kp Y        &kp U          &kp I       &kp O       &kp P
 &kp A      &kp S  &lt 6 D  &kp F  &kp G        &lt 5 TAB                            &kp H        &kp J          &kp K       &kp L       &kp MINUS
 &kp Z      &kp X  &kp C    &kp V  &kp B        &kp LEFT_SHIFT      &kp RIGHT_SHIFT  &kp N        &kp M          &kp COMMA   &kp PERIOD  &kp SLASH
-&kp LCTRL                         &lt 1 SPACE  &kp LEFT_COMMAND    &kp BACKSPACE    &lt 2 ENTER  &lt 3 LS(TAB)  &kp ESCAPE  &kp GLOBE   &kp LEFT_ALT
+&kp LCTRL                         &lt 1 SPACE  &kp LEFT_COMMAND    &kp BACKSPACE    &lt 2 ENTER  &lt 3 LS(TAB)  &kp ESCAPE  &kp GLOBE   &td0
             >;
 
             sensor-bindings =

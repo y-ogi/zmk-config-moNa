@@ -28,28 +28,13 @@
             key-positions = <12 13>;
         };
 
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
-        };
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
-        };
-
         lang2 {
-            bindings = <&kp LANG2>;
-            key-positions = <5 6>;
+            bindings = <&kp LANG1>;
+            key-positions = <7 8>;
         };
 
         lang1 {
-            bindings = <&kp LANG1>;
+            bindings = <&kp LANG2>;
             key-positions = <6 7>;
         };
     };
@@ -141,10 +126,10 @@
 
         layer_3 {
             bindings = <
-&kp ESCAPE        &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                     &none          &kp LC(LEFT)   &kp LC(UP_ARROW)  &kp LC(RIGHT)  &none
-&kp LEFT_COMMAND  &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans            &kp LG(LEFT)   &mkp MB1       &mkp MB3          &mkp MB2       &kp LG(RIGHT)
-&kp LEFT_SHIFT    &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans  &kp LC(SPACE)  &kp LG(SPACE)  &trans            &trans         &trans
-&trans                                                                             &trans   &trans    &trans  &trans         &trans         &trans            &trans         &trans
+&kp ESCAPE        &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                     &none         &kp LC(LEFT)   &kp LC(UP_ARROW)  &kp LC(RIGHT)  &none
+&kp LEFT_COMMAND  &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans            &kp LG(LEFT)  &mkp MB1       &mkp MB3          &mkp MB2       &kp LG(RIGHT)
+&kp LEFT_SHIFT    &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans  &trans        &kp LG(SPACE)  &trans            &trans         &trans
+&trans                                                                             &trans   &trans    &trans  &trans        &trans         &trans            &trans         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;

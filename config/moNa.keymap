@@ -38,8 +38,8 @@
             key-positions = <6 7>;
         };
 
-        ctrlj {
-            bindings = <&kp LC(J)>;
+        ctrlsemicolon {
+            bindings = <&kp LC(SEMICOLON)>;
             key-positions = <33 20>;
         };
     };

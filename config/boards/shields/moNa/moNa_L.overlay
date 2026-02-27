@@ -1,11 +1,14 @@
 #include "moNa.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &kscan0 {
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
+            , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 7 GPIO_ACTIVE_HIGH>
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
 };
@@ -14,6 +17,17 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        input-processors =
+            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
+
+        scroller {
+            layers = <1>;
+            input-processors =
+                <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
+                <&zip_scroll_scaler 1 5>;
+        };
     };
 };
 
@@ -50,6 +64,15 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        scroll-layers = <1>;
+        cpi = <1600>;
+        invert-x;
+        invert-y;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
     };
+};
+
+&xiao_serial {
+    status = "disabled";
 };
